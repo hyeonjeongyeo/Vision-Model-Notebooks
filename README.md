@@ -1,2 +1,2 @@
-# Vision-Model-Notebooks
-Vision Model Notebooks
+# CV Projects
+This repository contains some Computer Vision projects.
