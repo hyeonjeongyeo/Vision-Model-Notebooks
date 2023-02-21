@@ -27,23 +27,23 @@ Two tokenization methods are Uniform Frame Sampling and Tubelet Embedding. Unifo
 On Nodule MNIST 3D and Organ MNIST 3D datasets, Tubelet embedding excelled in accuracy and loss in validation.  
 
 <p align="center">
- <img src = "./ViViT/img/vivit-result-nodule.png", height="400x", width="600px">
+  <img width="500" height="300" src="./ViViT/img/vivit-result-nodule.png">
 </p>
 
 <p align="center">
- <img src = "./ViViT/img/vivit-result-organ.png", height="400x", width="600px">
+  <img width="500" height="300" src="./ViViT/img/vivit-result-organ.png">
 </p>
 
 The difference of training time between two methods was not significant or valid according to datasets and learning rates.
 
 <p align="center">
- <img src = "./ViViT/img/vivit-train-time.png", height="400x", width="600px">
+  <img width="550" height="100" src="./ViViT/img/vivit-train-time.png">
 </p>
 
 On Adrenal MNIST 3D dataset under the same learning rate, validation result for Uniform Frame Sampling converged whereas for Tubelet Embedding diverged. Thus the two methods for tokenization demands different hyperparameters for training and (probably) model.  
 
 <p align="center">
- <img src = "./ViViT/img/vivit-result-adrenal.png", height="400x", width="600px">
+  <img width="500" height="300" src="./ViViT/img/vivit-result-adrenal.png">
 </p>
 
 In sum, the experiment showed that Tubelet Embedding tends to acquire better accuracy and lower loss than Uniform Frame Sampling given same model, hyperparameter, and training time. Note that the experiment was done on small datasets with not pre-trained, small Transformer. 
@@ -55,19 +55,19 @@ Overall interactive result can be viewed on [Tensorboard.dev](https://tensorboar
 
 This notebook explores the effect of [**Token Learner**](https://proceedings.neurips.cc/paper/2021/file/6a30e32e56fce5cf381895dfe6ca7b6f-Paper.pdf) in ViViT. 
 
-The datasets used for training are from [MedMNIST 3D](https://medmnist.com/), which contains medical 3D images with different types of classes. The model structure was tested on patch size 8 and 16, and token learner was put in the middle (half point of the transformer blocks). AdamW optimization method was used for regulralization and the learning rate was reduced on plateau.
+The datasets are from [MedMNIST 3D](https://medmnist.com/), which contains medical 3D images with different types of classes. The model structure was tested on patch size 8 and 16, and token learner was put in the middle (half point of the transformer blocks). AdamW optimization method was used for regulralization and the learning rate was reduced on plateau.
 
 ### The Result
 
 <p align="center">
- <img src = "./ViViT/img/vivit_tl_nodulemnist3d.png", height="200x", width="500px">
+  <img width="500" height="200" src="./ViViT/img/vivit_tl_nodulemnist3d.png">
 </p>
 
 <p align="center">
- <img src = "./ViViT/img/vivit_tl_organmnist3d.png", height="200x", width="500px">
+  <img width="500" height="200" src="./ViViT/img/vivit_tl_organmnist3d.png">
 </p>
 
 The overall performance of the model with token learner was better than the naive model in validation accracy and loss over epochs. Also, there was no signs of overfitting with token learner even though the training time was shortened. The result shows that with token learners models learn faster, without significant risk of overfitting.
 
-All of the result graphs are displayed on [TensorBoard](https://tensorboard.dev/experiment/nYVP58K4Q1GEuWLbkWBFow/). 
+All of the result graphs are displayed on [TensorBoard.dev](https://tensorboard.dev/experiment/nYVP58K4Q1GEuWLbkWBFow/). 
 
