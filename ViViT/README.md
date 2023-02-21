@@ -27,23 +27,23 @@ Two tokenization methods are Uniform Frame Sampling and Tubelet Embedding. Unifo
 On Nodule MNIST 3D and Organ MNIST 3D datasets, Tubelet embedding excelled in accuracy and loss in validation.  
 
 <p align="center">
-  <img width="500" height="300" src="./ViViT/img/vivit-result-nodule.png">
+  <img width="500" alt="vivit-result-nodule" src="https://user-images.githubusercontent.com/84669195/220334368-68922e8c-86c9-4a2e-83e0-bc389f41ffbe.png">
 </p>
 
 <p align="center">
-  <img width="500" height="300" src="./ViViT/img/vivit-result-organ.png">
+  <img width="500" alt="vivit-result-organ" src="https://user-images.githubusercontent.com/84669195/220334692-26f9be6f-0da0-4aba-9a51-d468599d1635.png">
 </p>
 
 The difference of training time between two methods was not significant or valid according to datasets and learning rates.
 
 <p align="center">
-  <img width="550" height="100" src="./ViViT/img/vivit-train-time.png">
+  <img width="600" alt="vivit-train-time" src="https://user-images.githubusercontent.com/84669195/220334699-56f786c2-302d-40d2-ad93-14a10ad7ac81.png">
 </p>
 
 On Adrenal MNIST 3D dataset under the same learning rate, validation result for Uniform Frame Sampling converged whereas for Tubelet Embedding diverged. Thus the two methods for tokenization demands different hyperparameters for training and (probably) model.  
 
 <p align="center">
-  <img width="500" height="300" src="./ViViT/img/vivit-result-adrenal.png">
+  <img width="500" alt="vivit-result-adrenal" src="https://user-images.githubusercontent.com/84669195/220334689-05cc44de-c199-4bbb-a203-644409edeca3.png">
 </p>
 
 In sum, the experiment showed that Tubelet Embedding tends to acquire better accuracy and lower loss than Uniform Frame Sampling given same model, hyperparameter, and training time. Note that the experiment was done on small datasets with not pre-trained, small Transformer. 
@@ -60,11 +60,11 @@ The datasets are from [MedMNIST 3D](https://medmnist.com/), which contains medic
 ### The Result
 
 <p align="center">
-  <img width="500" height="200" src="./ViViT/img/vivit_tl_nodulemnist3d.png">
+  <img width="500" alt="vivit_tl_nodulemnist3d" src="https://user-images.githubusercontent.com/84669195/220334673-4425f25b-5bc0-414d-88b9-fc3ebe00f5fb.png">
 </p>
 
 <p align="center">
-  <img width="500" height="200" src="./ViViT/img/vivit_tl_organmnist3d.png">
+  <img width="500" alt="vivit_tl_organmnist3d" src="https://user-images.githubusercontent.com/84669195/220334684-0b0f2a09-6f06-4db8-bee4-1381b6deb076.png">
 </p>
 
 The overall performance of the model with token learner was better than the naive model in validation accracy and loss over epochs. Also, there was no signs of overfitting with token learner even though the training time was shortened. The result shows that with token learners models learn faster, without significant risk of overfitting.
